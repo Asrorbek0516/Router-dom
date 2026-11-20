@@ -1,26 +1,31 @@
-import { createBrowserRouter,RouterProvider } from "react-router-dom"
+import { Routes, Route } from 'react-router-dom'
 
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Contacts from "./pages/Contacts"
+import MainLayout from './Layout/MainLayout'
 
-const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path: "/contact",
-    element: <Contacts />
-  }
-])
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Footer from './Components/Footer'
 
 function App() {
-  return <RouterProvider router={routes} />
+  return (
+    <Routes>
+      <Route element={<MainLayout />}>
+
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route path="/login" element={<Login />} />
+
+      </Route>
+    </Routes>
+  )
 }
 
 export default App

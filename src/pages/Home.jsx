@@ -1,10 +1,16 @@
-import React from 'react'
+
+import Hero from '../Components/Hero'
+import Features from '../Components/Features'
+import LatestPosts from '../Components/LatestPosts'
+
 
 function Home() {
   return (
-    <div>
-        <h1>Home</h1>
-    </div>
+    <>
+      <Hero />
+      <Features />
+      <LatestPosts />
+    </>
   )
 }
 
